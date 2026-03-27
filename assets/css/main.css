@@ -27,6 +27,7 @@ body {
     color: var(--text-color);
     transition: .3s;
     line-height: 1.6;
+    position: relative; /* 配合背景层 */
 }
 h1, h2, h3 { color: var(--title-color); font-weight: 700; }
 ul { list-style: none; }
@@ -36,9 +37,27 @@ a { text-decoration: none; }
 .section { padding: 6rem 0 2rem; }
 .section__title { text-align: center; font-size: 2rem; margin-bottom: 3rem; }
 
+/* ============ 全屏固定背景 ============ */
+.fixed-bg {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    background-image: url('../images/background.jpg'); /* 背景图片路径 */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    z-index: -1; /* 垫在最底层 */
+    opacity: 0.25; /* 透明度 20%，可根据你的图片亮暗微调这里 (如 0.05 或 0.15) */
+}
+
 /* ============ 按钮样式 ============ */
 .button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
     background-color: var(--first-color);
     color: #fff;
     padding: 1rem 2rem;
@@ -70,12 +89,13 @@ a { text-decoration: none; }
 .hero__container { grid-template-columns: 1fr 1fr; align-items: center; }
 .hero__subtitle { font-size: 1.2rem; color: var(--text-color); margin-bottom: 1rem; }
 .hero__description { margin-bottom: 2rem; }
-.hero__buttons { display: flex; gap: 1rem; }
+.hero__buttons { display: flex; flex-wrap: wrap; gap: 1rem; }
 .hero__image img { width: 300px; border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,.1); }
 
 /* ============ About 区域 (时间线与标签) ============ */
-.about__container { grid-template-columns: 1fr 1fr; }
+.about__container { grid-template-columns: 1fr 1fr; gap: 3rem;}
 .musings { background-color: var(--container-color); padding: 1.5rem; border-radius: 1rem; margin-top: 2rem; border: 1px solid var(--border-color); }
+.musings__title { margin-bottom: 1rem; }
 .timeline { border-left: 2px solid var(--first-color); padding-left: 1.5rem; margin-bottom: 2rem; }
 .timeline__item { position: relative; margin-bottom: 2rem; }
 .timeline__item::before {
@@ -87,30 +107,44 @@ a { text-decoration: none; }
 .about__tags li { background-color: var(--container-color); padding: .5rem 1rem; border-radius: 2rem; font-size: .875rem; border: 1px solid var(--border-color); }
 
 /* ============ Projects 区域 (项目卡片) ============ */
-.projects__filters { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
-.filter-button { background: transparent; border: none; font-size: 1rem; font-weight: 600; cursor: pointer; color: var(--title-color); }
+.projects__filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
+.filter-button { background: transparent; border: none; font-size: 1rem; font-weight: 600; cursor: pointer; color: var(--title-color); transition: .3s;}
 .filter-button.active { color: var(--first-color); }
 .projects__grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .project-card { background-color: var(--container-color); border-radius: 1rem; overflow: hidden; border: 1px solid var(--border-color); transition: .3s; }
 .project-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
 .project-card.hide { display: none; }
 .project-card__content { padding: 1.5rem; }
-.project-card__title { margin-bottom: .5rem; }
+.project-card__title { margin-bottom: .5rem; line-height: 1.4; }
 .project-card__description { font-size: .875rem; margin-bottom: 1.5rem; }
 .project-card__actions { display: flex; gap: 1rem; }
-.project-card__action { color: var(--title-color); font-size: .875rem; font-weight: 600; }
+.project-card__action { color: var(--title-color); font-size: .875rem; font-weight: 600; transition: .3s;}
+.project-card__action:hover { color: var(--first-color); }
 .project-card__action--primary { color: var(--first-color); }
 
-/* ============ 技能树 ============ */
-.skills__container { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
-.skill-item { text-align: center; color: var(--title-color); }
-.skill-item i { font-size: 3rem; margin-bottom: .5rem; display: block; color: var(--first-color); }
+/* ============ 心得感悟 (文章卡片) ============ */
+.insights__container { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.insight-card { background-color: var(--container-color); padding: 2rem; border-radius: 1rem; border: 1px solid var(--border-color); transition: .3s; display: flex; flex-direction: column; }
+.insight-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,.1); border-color: var(--first-color); }
+.insight-card__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; font-size: .875rem; color: var(--text-color); }
+.insight-card__tag { background-color: var(--body-color); padding: .2rem .8rem; border-radius: 2rem; color: var(--first-color); font-weight: 600; font-size: .75rem; border: 1px solid var(--border-color); }
+.insight-card__title { font-size: 1.2rem; margin-bottom: 1rem; color: var(--title-color); line-height: 1.4; }
+.insight-card__excerpt { margin-bottom: 1.5rem; flex-grow: 1; font-size: .938rem; }
+.insight-card__link { display: inline-flex; align-items: center; gap: .5rem; color: var(--first-color); font-weight: 600; font-size: .938rem; transition: .3s; }
+.insight-card__link:hover { gap: .8rem; }
+
+/* ============ 联系我区域 ============ */
+.contact__container { text-align: center; max-width: 600px;}
+.contact__buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 2rem;}
 
 /* ============ 模态框 ============ */
 .modal { position: fixed; inset: 0; background-color: rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; visibility: hidden; transition: .3s; }
 .modal.active-modal { opacity: 1; visibility: visible; }
 .modal__content { background-color: var(--container-color); padding: 3rem; border-radius: 1rem; position: relative; text-align: center; }
 .modal__close { position: absolute; top: 1rem; right: 1.5rem; font-size: 1.5rem; cursor: pointer; color: var(--title-color); }
+
+/* ============ Footer ============ */
+.footer { padding: 2rem 0; text-align: center; color: var(--text-color); margin-top: 2rem; border-top: 1px solid var(--border-color);}
 
 /* ============ 响应式 ============ */
 @media screen and (max-width: 768px) {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XJC | 电子爱好者</title>
-    <meta name="description" content="你好，我是XJC。一名热衷于探索硬件与代码世界的电子爱好者。">
+    <meta name="description" content="你好，我是XJC。一名Whuer在读本科生，热衷于探索硬件与代码世界的电子爱好者。">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
+    <div class="fixed-bg"></div>
+
     <header class="header">
         <nav class="nav container">
             <a href="#" class="nav__logo">XJC.</a>
@@ -23,7 +25,7 @@
                     <li class="nav__item"><a href="#hero" class="nav__link">首页</a></li>
                     <li class="nav__item"><a href="#about" class="nav__link">关于我</a></li>
                     <li class="nav__item"><a href="#projects" class="nav__link">项目实战</a></li>
-                    <li class="nav__item"><a href="#skills" class="nav__link">技能树</a></li>
+                    <li class="nav__item"><a href="#insights" class="nav__link">心得感悟</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">联系我</a></li>
                 </ul>
             </div>
@@ -42,10 +44,10 @@
                 <div class="hero__content">
                     <h1>你好, 我是 XJC</h1>
                     <p class="hero__subtitle">电子爱好者</p>
-                    <p class="hero__description">打通硬件与软件的边界，探索数据背后的真实价值。从单片机底层 C 代码，到 Python 数据可视化，再到 C# 桌面应用构建。</p>
+                    <p class="hero__description">分享自己日常制作的一些小项目。</p>
                     <div class="hero__buttons">
                         <a href="#projects" class="button">查看我的项目</a>
-                        <a href="https://github.com/" target="_blank" class="button button--ghost">访问 GitHub</a>
+                        <a href="https://github.com/xjc666-666" target="_blank" class="button button--ghost">访问 GitHub</a>
                     </div>
                 </div>
                 <div class="hero__image">
@@ -58,13 +60,13 @@
             <h2 class="section__title">关于我</h2>
             <div class="about__container container grid">
                 <div class="about__left">
-                    <p>我是一名热衷于构建高效系统的电子爱好者。</p>
-                    <p>我的技术栈跨度极大：不仅能深入到底层使用 <strong>Keil</strong> 为 <strong>MSPM0L1306</strong> 微控制器编写 C 语言，还能熟练运用 <strong>Python</strong> 处理复杂的 CSV 传感器数据并进行可视化，同时也能使用 <strong>C#</strong> 编写健壮的应用程序。</p>
+                    <p>我是一名热衷于自制实用电子产品的电子爱好者，也是学生党。</p>
+                    <p>我的技术跨度较广：从软件——使用 <strong>Keil</strong> 为单片机编写<strong> C </strong>语言，到硬件——熟练运用 <strong>嘉立创</strong> 绘制原理图和PCB，再到后端——使用 <strong>Java</strong> 编写简单的安卓应用程序。</p>
                     
                     <div class="musings">
                         <h3 class="musings__title">极客信条</h3>
                         <blockquote>
-                            “代码不仅是机器执行的指令，更是将现实世界的物理数据转化为数字逻辑的桥梁。”
+                            “步履不止，前进不止。”
                         </blockquote>
                     </div>
                 </div>
@@ -72,31 +74,31 @@
                 <div class="about__right">
                     <div class="timeline">
                         <div class="timeline__item">
-                            <div class="timeline__date">2026-03-22</div>
+                            <div class="timeline__date">2023-08-25</div>
                             <div class="timeline__content">
-                                <h3>系统架构设计</h3>
-                                <p>完成“AI+工业设备声学故障监测节点”嵌入式系统设计文档。</p>
+                                <h3>步入大学</h3>
+                                <p>开始学习电子信息工程，了解和学习各种专业知识。</p>
                             </div>
                         </div>
                         <div class="timeline__item">
-                            <div class="timeline__date">2026-03-22</div>
+                            <div class="timeline__date">2025-11-22</div>
                             <div class="timeline__content">
-                                <h3>数据处理开发</h3>
-                                <p>编写 Python 脚本，实现本地 CSV 传感器文件的读取与数据曲线可视化。</p>
+                                <h3>竞赛生涯结束</h3>
+                                <p>在这期间，历经电赛、嵌赛、集创赛等比赛，获得了多个奖项，积累了不少软硬件知识。</p>
                             </div>
                         </div>
                         <div class="timeline__item">
-                            <div class="timeline__date">2026-03-20</div>
+                            <div class="timeline__date">至今</div>
                             <div class="timeline__content">
-                                <h3>底层驱动开发</h3>
-                                <p>基于 MSPM0L1306 单片机，研发支持浮点运算与优先级的多功能计算器。</p>
+                                <h3>科研项目</h3>
+                                <p>目前尝试进组做科研，自己平常也做一些小项目。</p>
                             </div>
                         </div>
                     </div>
                     <ul class="about__tags">
                         <li>嵌入式系统</li>
                         <li>C/C++底层</li>
-                        <li>Python可视化</li>
+                        <li>安卓应用设计</li>
                         <li>硬件DIY</li>
                     </ul>
                 </div>
@@ -146,15 +148,40 @@
             </div>
         </section>
 
-        <section id="skills" class="skills section">
-            <h2 class="section__title">技能树</h2>
-            <div class="skills__container container">
-                <div class="skill-item"><i class="fab fa-cuttlefish"></i><span>C/C++</span></div>
-                <div class="skill-item"><i class="fas fa-cube"></i><span>Matlab</span></div>
-                <div class="skill-item"><i class="fas fa-microchip"></i><span>Keil</span></div>
-                <div class="skill-item"><i class="fas fa-drafting-compass"></i><span>嘉立创</span></div>
-                <div class="skill-item"><i class="fab fa-python"></i><span>Python</span></div>
-                <div class="skill-item"><i class="fab fa-android"></i><span>Android</span></div>
+        <section id="insights" class="insights section">
+            <h2 class="section__title">心得感悟</h2>
+            <div class="insights__container container grid">
+                
+                <article class="insight-card">
+                    <div class="insight-card__header">
+                        <span class="insight-card__date"><i class="far fa-calendar-alt"></i> 2026-03-28</span>
+                        <span class="insight-card__tag">硬件DIY</span>
+                    </div>
+                    <h3 class="insight-card__title">桌面蓝牙音响自制全记录：从画板到组装</h3>
+                    <p class="insight-card__excerpt">记录我自制一款桌面蓝牙音响的全过程，包括功放芯片选型、嘉立创打板、蓝牙模块调试以及外壳组装...</p>
+                    <a href="articles/bluetooth-speaker.html" class="insight-card__link">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                </article>
+
+                <article class="insight-card">
+                    <div class="insight-card__header">
+                        <span class="insight-card__date"><i class="far fa-clock"></i> 待定</span>
+                        <span class="insight-card__tag">更新中</span>
+                    </div>
+                    <h3 class="insight-card__title">新项目筹备中...</h3>
+                    <p class="insight-card__excerpt">博主正在疯狂画板写代码中，下一篇硬核项目复盘正在路上，敬请期待。</p>
+                    <a href="#insights" class="insight-card__link" style="color: var(--text-color); cursor: default;">敬请期待 <i class="fas fa-hourglass-half"></i></a>
+                </article>
+
+                <article class="insight-card">
+                    <div class="insight-card__header">
+                        <span class="insight-card__date"><i class="far fa-clock"></i> 待定</span>
+                        <span class="insight-card__tag">更新中</span>
+                    </div>
+                    <h3 class="insight-card__title">技术随笔正在路上...</h3>
+                    <p class="insight-card__excerpt">更多关于单片机开发、Python 数据处理和安卓应用设计的踩坑记录将在这里发布。</p>
+                    <a href="#insights" class="insight-card__link" style="color: var(--text-color); cursor: default;">敬请期待 <i class="fas fa-hourglass-half"></i></a>
+                </article>
+
             </div>
         </section>
 
@@ -165,6 +192,7 @@
                 <div class="contact__buttons">
                     <a href="mailto:1815830543@qq.com" class="button"><i class="fas fa-envelope"></i> 发送邮件</a>
                     <button class="button" id="wechat-btn"><i class="fab fa-weixin"></i> 添加微信</button>
+                    <button class="button" id="qq-btn"><i class="fab fa-qq"></i> 添加QQ</button>
                 </div>
             </div>
         </section>
@@ -180,8 +208,17 @@
         <div class="modal__content">
             <span class="modal__close">&times;</span>
             <h3>微信二维码</h3>
-            <img src="assets/images/wechat_qr.png" alt="WeChat QR Code" style="width: 200px; height: 200px; background: #eee;">
+            <img src="assets/images/wechat_qr.png" alt="WeChat QR Code" style="width: 200px; height: 200px; background: #eee; object-fit: contain;">
             <p>扫一扫添加我的微信</p>
+        </div>
+    </div>
+
+    <div class="modal" id="qq-modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <h3>QQ二维码</h3>
+            <img src="assets/images/qq_qr.png" alt="QQ QR Code" style="width: 200px; height: 200px; background: #eee; object-fit: contain;">
+            <p>扫一扫添加我的QQ</p>
         </div>
     </div>
 

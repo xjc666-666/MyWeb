@@ -62,27 +62,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ============ 4. 模态框 (弹窗) ============ */
+    /* ============ 4. 模态框 (双二维码弹窗) ============ */
     const wechatBtn = document.getElementById('wechat-btn');
     const wechatModal = document.getElementById('wechat-modal');
+    
+    const qqBtn = document.getElementById('qq-btn');
+    const qqModal = document.getElementById('qq-modal');
+    
     const closeBtns = document.querySelectorAll('.modal__close');
 
+    // 打开微信弹窗
     if (wechatBtn) {
         wechatBtn.addEventListener('click', () => {
             wechatModal.classList.add('active-modal');
         });
     }
 
+    // 打开QQ弹窗
+    if (qqBtn) {
+        qqBtn.addEventListener('click', () => {
+            qqModal.classList.add('active-modal');
+        });
+    }
+
+    // 点击右上角 X 关闭弹窗
     closeBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             btn.closest('.modal').classList.remove('active-modal');
         });
     });
 
-    // 点击弹窗外部也可关闭
+    // 点击弹窗外部也可自动关闭
     window.addEventListener('click', (e) => {
         if (e.target === wechatModal) {
             wechatModal.classList.remove('active-modal');
         }
+        if (e.target === qqModal) {
+            qqModal.classList.remove('active-modal');
+        }
     });
+
 });

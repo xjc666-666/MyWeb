@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桌面蓝牙音响自制全记录 | XJC</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    
+    <style>
+        .article-container {
+            max-width: 800px;
+            margin: 100px auto 50px auto;
+            padding: 3rem;
+            background: var(--container-color);
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            color: var(--text-color);
+        }
+        .article-header { margin-bottom: 2rem; text-align: center; }
+        .article-header h1 { font-size: 2rem; color: var(--title-color); margin-bottom: 1rem; line-height: 1.4;}
+        .article-meta { font-size: 0.9rem; color: var(--text-color); opacity: 0.8; }
+        .article-content h2 { color: var(--first-color); margin: 2rem 0 1rem 0; font-size: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;}
+        .article-content p { margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.05rem;}
+        .article-content ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; line-height: 1.8; }
+        .article-content img { max-width: 100%; border-radius: 0.5rem; margin: 1.5rem 0; display: block; border: 1px solid var(--border-color); }
+        .back-btn { margin-bottom: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; color: var(--title-color); font-weight: 600; transition: 0.3s; }
+        .back-btn:hover { color: var(--first-color); transform: translateX(-5px); }
+        
+        /* 适配手机屏幕 */
+        @media screen and (max-width: 768px) {
+            .article-container { margin: 80px 1rem 2rem 1rem; padding: 1.5rem; }
+            .article-header h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body style="background-color: var(--body-color);">
+    <main>
+        <div class="article-container">
+            <a href="../index.html" class="back-btn"><i class="fas fa-arrow-left"></i> 返回首页</a>
+            
+            <header class="article-header">
+                <h1>桌面蓝牙音响自制全记录：从画板到组装</h1>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar-alt"></i> 2026-03-28</span> &nbsp;|&nbsp; 
+                    <span><i class="fas fa-user-edit"></i> XJC</span> &nbsp;|&nbsp; 
+                    <span style="color: var(--first-color);"><i class="fas fa-tag"></i> 硬件DIY</span>
+                </div>
+            </header>
+            
+            <article class="article-content">
+                <p>作为一个电子爱好者，桌面上怎么能少得了一台自己亲手打造的蓝牙音响呢？在这个项目中，我从零开始，完成了元器件选型、原理图绘制、PCB 打样、代码烧录以及最终的结构组装。</p>
+                
+                <h2>1. 硬件选型与方案设计</h2>
+                <p>在设计之初，我对音质和体积做了一些平衡。主要的核心元器件清单如下：</p>
+                <ul>
+                    <li><strong>蓝牙接收模块：</strong> 选用了支持蓝牙 5.0 的模块，连接稳定且底噪较小。</li>
+                    <li><strong>功放芯片：</strong> 采用了一款经典的 D 类数字功放芯片，发热量小，非常适合桌面级小体积音响。</li>
+                    <li><strong>电源管理：</strong> 设计了锂电池充放电保护电路，支持 Type-C 接口边充边放。</li>
+                </ul>
+
+                <h2>2. 嘉立创 PCB 打板</h2>
+                <p>确定好原理图后，我使用了立创 EDA 进行 PCB 布局布线。为了保证音频信号的纯净，我在走线时特意将模拟地和数字地进行了合理的分割，并加粗了电源线和喇叭输出线。</p>
+                
+                <p><em>（注：在嘉立创打样的板子很快就收到了，沉金工艺看起来非常舒服。）</em></p>
+
+                <h2>3. 焊接与调试</h2>
+                <p>最考验手抖程度的环节来了。贴片元件的焊接需要一定的技巧，特别是功放芯片底部的散热焊盘，我使用了热风枪配合焊锡膏才完美搞定。上电测试时，第一次连上手机蓝牙听到“滴滴”声的那一刻，成就感爆棚。</p>
+
+                <h2>4. 外壳与最终组装</h2>
+                <p>好马配好鞍，光有裸板可不行。我为它设计了一个简约的腔体，喇叭单元使用了两个全频喇叭搭配一个被动辐射器（震膜），以此来增强低音效果。</p>
+                <p>组装完成后，整体外观非常复古/赛博（根据你的实际情况修改），放在桌面上不仅是个实用的发声工具，更是一个完美的极客摆件。</p>
+
+                <h2>总结</h2>
+                <p>这个项目让我对音频电路的布线规范以及电源噪声处理有了更深的理解。虽然市面上的蓝牙音响很便宜，但亲手打造一台属于自己的设备，这种折腾的乐趣是买不到的。步履不止，前进不止，期待下一个好玩的项目！</p>
+            </article>
+        </div>
+    </main>
+</body>
+</html>
