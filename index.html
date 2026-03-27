@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XJC | 电子爱好者</title>
+    <meta name="description" content="你好，我是XJC。一名热衷于探索硬件与代码世界的电子爱好者。">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">XJC.</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#hero" class="nav__link">首页</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">关于我</a></li>
+                    <li class="nav__item"><a href="#projects" class="nav__link">项目实战</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">技能树</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">联系我</a></li>
+                </ul>
+            </div>
+            <div class="nav__actions">
+                <i class="fas fa-moon theme-switcher" id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero section">
+            <div class="hero__container container grid">
+                <div class="hero__content">
+                    <h1>你好, 我是 XJC</h1>
+                    <p class="hero__subtitle">电子爱好者</p>
+                    <p class="hero__description">打通硬件与软件的边界，探索数据背后的真实价值。从单片机底层 C 代码，到 Python 数据可视化，再到 C# 桌面应用构建。</p>
+                    <div class="hero__buttons">
+                        <a href="#projects" class="button">查看我的项目</a>
+                        <a href="https://github.com/" target="_blank" class="button button--ghost">访问 GitHub</a>
+                    </div>
+                </div>
+                <div class="hero__image">
+                    <img src="assets/images/avatar.jpg" alt="XJC Logo">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about section">
+            <h2 class="section__title">关于我</h2>
+            <div class="about__container container grid">
+                <div class="about__left">
+                    <p>我是一名热衷于构建高效系统的电子爱好者。</p>
+                    <p>我的技术栈跨度极大：不仅能深入到底层使用 <strong>Keil</strong> 为 <strong>MSPM0L1306</strong> 微控制器编写 C 语言，还能熟练运用 <strong>Python</strong> 处理复杂的 CSV 传感器数据并进行可视化，同时也能使用 <strong>C#</strong> 编写健壮的应用程序。</p>
+                    
+                    <div class="musings">
+                        <h3 class="musings__title">极客信条</h3>
+                        <blockquote>
+                            “代码不仅是机器执行的指令，更是将现实世界的物理数据转化为数字逻辑的桥梁。”
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="about__right">
+                    <div class="timeline">
+                        <div class="timeline__item">
+                            <div class="timeline__date">2026-03-22</div>
+                            <div class="timeline__content">
+                                <h3>系统架构设计</h3>
+                                <p>完成“AI+工业设备声学故障监测节点”嵌入式系统设计文档。</p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__date">2026-03-22</div>
+                            <div class="timeline__content">
+                                <h3>数据处理开发</h3>
+                                <p>编写 Python 脚本，实现本地 CSV 传感器文件的读取与数据曲线可视化。</p>
+                            </div>
+                        </div>
+                        <div class="timeline__item">
+                            <div class="timeline__date">2026-03-20</div>
+                            <div class="timeline__content">
+                                <h3>底层驱动开发</h3>
+                                <p>基于 MSPM0L1306 单片机，研发支持浮点运算与优先级的多功能计算器。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="about__tags">
+                        <li>嵌入式系统</li>
+                        <li>C/C++底层</li>
+                        <li>Python可视化</li>
+                        <li>硬件DIY</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects section">
+            <h2 class="section__title">项目 & 实战</h2>
+            <div class="projects__container container">
+                <div class="projects__filters">
+                    <button class="filter-button active" data-filter="all">全部</button>
+                    <button class="filter-button" data-filter="hardware">硬件开发</button>
+                    <button class="filter-button" data-filter="software">软件工程</button>
+                </div>
+
+                <div class="projects__grid grid">
+                    <div class="project-card" data-category="hardware">
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">AI+ 工业设备声学故障监测节点</h3>
+                            <p class="project-card__description">一套综合性的嵌入式监控系统，负责采集底层声学传感器数据并配合算法进行工业故障诊断。</p>
+                            <div class="project-card__actions">
+                                <a href="#" class="project-card__action project-card__action--primary">系统架构图</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="hardware">
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">MSPM0L1306 多功能计算器</h3>
+                            <p class="project-card__description">基于 Keil 环境开发的单片机计算器程序，手写底层逻辑，完美支持复杂的多重符号浮点运算及错误检测。</p>
+                            <div class="project-card__actions">
+                                <a href="#" class="project-card__action project-card__action--primary">C 源码查看</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-category="software">
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">传感器数据处理与可视化平台</h3>
+                            <p class="project-card__description">基于 Python 开发，可自动读取指定路径下的嵌入式作业 CSV 文件，清洗数据并渲染出直观的数据曲线趋势图。</p>
+                            <div class="project-card__actions">
+                                <a href="#" class="project-card__action project-card__action--primary">Python 源码</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills section">
+            <h2 class="section__title">技能树</h2>
+            <div class="skills__container container">
+                <div class="skill-item"><i class="fab fa-cuttlefish"></i><span>C/C++</span></div>
+                <div class="skill-item"><i class="fas fa-cube"></i><span>Matlab</span></div>
+                <div class="skill-item"><i class="fas fa-microchip"></i><span>Keil</span></div>
+                <div class="skill-item"><i class="fas fa-drafting-compass"></i><span>嘉立创</span></div>
+                <div class="skill-item"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="skill-item"><i class="fab fa-android"></i><span>Android</span></div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact section">
+            <h2 class="section__title">联系我</h2>
+            <div class="contact__container container">
+                <p>无论你是想交流单片机开发心得、PCB打样经验，还是探讨代码逻辑，随时欢迎联系我。</p>
+                <div class="contact__buttons">
+                    <a href="mailto:1815830543@qq.com" class="button"><i class="fas fa-envelope"></i> 发送邮件</a>
+                    <button class="button" id="wechat-btn"><i class="fab fa-weixin"></i> 添加微信</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <p>&copy; 2026 XJC. 电子爱好者.</p>
+        </div>
+    </footer>
+
+    <div class="modal" id="wechat-modal">
+        <div class="modal__content">
+            <span class="modal__close">&times;</span>
+            <h3>微信二维码</h3>
+            <img src="assets/images/wechat_qr.png" alt="WeChat QR Code" style="width: 200px; height: 200px; background: #eee;">
+            <p>扫一扫添加我的微信</p>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
