@@ -25,7 +25,7 @@
                     <li class="nav__item"><a href="#hero" class="nav__link">首页</a></li>
                     <li class="nav__item"><a href="#about" class="nav__link">关于我</a></li>
                     <li class="nav__item"><a href="#projects" class="nav__link">项目实战</a></li>
-                    <li class="nav__item"><a href="#insights" class="nav__link">心得感悟</a></li>
+                    <li class="nav__item"><a href="#insights" class="nav__link">小巧思</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">联系我</a></li>
                 </ul>
             </div>
@@ -60,11 +60,11 @@
             <h2 class="section__title">关于我</h2>
             <div class="about__container container grid">
                 <div class="about__left">
-                    <p>我是一名热衷于自制实用电子产品的电子爱好者，也是学生党。</p>
-                    <p>我的技术跨度较广：从软件——使用 <strong>Keil</strong> 为单片机编写<strong> C </strong>语言，到硬件——熟练运用 <strong>嘉立创</strong> 绘制原理图和PCB，再到后端——使用 <strong>Java</strong> 编写简单的安卓应用程序。</p>
+                    <p>我是一个电信虫且。</p>
+                    <p>我的技术跨度较广：从软件——使用 <strong>Keil</strong> 为单片机编写<strong> C </strong>语言，到硬件——运用 <strong>嘉立创</strong> 绘制简单的原理图和PCB，再到后端——使用 <strong>Java</strong> 编写简单的安卓应用程序。</p>
                     
                     <div class="musings">
-                        <h3 class="musings__title">极客信条</h3>
+                        <h3 class="musings__title">念念经</h3>
                         <blockquote>
                             “步履不止，前进不止。”
                         </blockquote>
@@ -115,51 +115,53 @@
                 </div>
 
                 <div class="projects__grid grid">
+                    
                     <div class="project-card" data-category="hardware">
                         <div class="project-card__content">
-                            <h3 class="project-card__title">AI+ 工业设备声学故障监测节点</h3>
-                            <p class="project-card__description">一套综合性的嵌入式监控系统，负责采集底层声学传感器数据并配合算法进行工业故障诊断。</p>
+                            <h3 class="project-card__title">桌面蓝牙音响自制全记录</h3>
+                            <p class="project-card__description">从原理图绘制、PCB打样到外壳组装的全过程记录，打造属于自己的桌面发声单元。</p>
                             <div class="project-card__actions">
-                                <a href="#" class="project-card__action project-card__action--primary">系统架构图</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="hardware">
-                        <div class="project-card__content">
-                            <h3 class="project-card__title">MSPM0L1306 多功能计算器</h3>
-                            <p class="project-card__description">基于 Keil 环境开发的单片机计算器程序，手写底层逻辑，完美支持复杂的多重符号浮点运算及错误检测。</p>
-                            <div class="project-card__actions">
-                                <a href="#" class="project-card__action project-card__action--primary">C 源码查看</a>
+                                <a href="articles/bluetooth-speaker.html" class="project-card__action project-card__action--primary">查看详情文章</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="project-card" data-category="software">
                         <div class="project-card__content">
-                            <h3 class="project-card__title">传感器数据处理与可视化平台</h3>
-                            <p class="project-card__description">基于 Python 开发，可自动读取指定路径下的嵌入式作业 CSV 文件，清洗数据并渲染出直观的数据曲线趋势图。</p>
+                            <h3 class="project-card__title">音频处理芯片 TM2314 驱动开发</h3>
+                            <p class="project-card__description">基于STM32F103C8T6的TM2314 驱动代码实现，包含音量调节、输入选择等功能的 .c 和 .h 文件。</p>
                             <div class="project-card__actions">
-                                <a href="#" class="project-card__action project-card__action--primary">Python 源码</a>
+                                <a href="articles/tm2314-driver.html" class="project-card__action project-card__action--primary">查看驱动代码</a>
                             </div>
                         </div>
                     </div>
+
+                    <div class="project-card" data-category="hardware software">
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">新项目筹备中...</h3>
+                            <p class="project-card__description">我正在疯狂画板/写代码中,下一个桌面项目正在路上，敬请期待。</p>
+                            <div class="project-card__actions">
+                                <span class="project-card__action" style="color: var(--text-color);"><i class="fas fa-hourglass-half"></i> 敬请期待</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
         <section id="insights" class="insights section">
-            <h2 class="section__title">心得感悟</h2>
+            <h2 class="section__title">小巧思</h2>
             <div class="insights__container container grid">
                 
                 <article class="insight-card">
                     <div class="insight-card__header">
-                        <span class="insight-card__date"><i class="far fa-calendar-alt"></i> 2026-03-28</span>
-                        <span class="insight-card__tag">硬件DIY</span>
+                        <span class="insight-card__date"><i class="far fa-calendar-alt"></i> 2026-03-29</span>
+                        <span class="insight-card__tag">桌面整理计划</span>
                     </div>
-                    <h3 class="insight-card__title">桌面蓝牙音响自制全记录：从画板到组装</h3>
-                    <p class="insight-card__excerpt">记录我自制一款桌面蓝牙音响的全过程，包括功放芯片选型、嘉立创打板、蓝牙模块调试以及外壳组装...</p>
-                    <a href="articles/bluetooth-speaker.html" class="insight-card__link">阅读全文 <i class="fas fa-arrow-right"></i></a>
+                    <h3 class="insight-card__title">桌面收拾和布局分享</h3>
+                    <p class="insight-card__excerpt">分享一下我整理桌面后的心情，尝试打造高效舒适的桌面环境...</p>
+                    <a href="articles/desktop-layout.html" class="insight-card__link">查看详情 <i class="fas fa-arrow-right"></i></a>
                 </article>
 
                 <article class="insight-card">
@@ -167,8 +169,8 @@
                         <span class="insight-card__date"><i class="far fa-clock"></i> 待定</span>
                         <span class="insight-card__tag">更新中</span>
                     </div>
-                    <h3 class="insight-card__title">新项目筹备中...</h3>
-                    <p class="insight-card__excerpt">我正在疯狂画板写代码中，下一篇项目复盘正在路上，敬请期待。</p>
+                    <h3 class="insight-card__title">灵感酝酿中...</h3>
+                    <p class="insight-card__excerpt">这里将分享我的小构思。</p>
                     <a href="#insights" class="insight-card__link" style="color: var(--text-color); cursor: default;">敬请期待 <i class="fas fa-hourglass-half"></i></a>
                 </article>
 
@@ -178,7 +180,7 @@
                         <span class="insight-card__tag">更新中</span>
                     </div>
                     <h3 class="insight-card__title">头脑风暴中...</h3>
-                    <p class="insight-card__excerpt">更多关于单片机开发和安卓应用设计的记录将在这里发布。</p>
+                    <p class="insight-card__excerpt">别催别催。</p>
                     <a href="#insights" class="insight-card__link" style="color: var(--text-color); cursor: default;">敬请期待 <i class="fas fa-hourglass-half"></i></a>
                 </article>
 
@@ -188,10 +190,10 @@
         <section id="contact" class="contact section">
             <h2 class="section__title">联系我</h2>
             <div class="contact__container container">
-                <p>由于这是个静态网页,没法留言,如果你有啥问题或建议,都可以通过QQ联系我,随时欢迎。</p>
+                <p>由于这是个静态网页,没法留言,如果你有啥问题或建议,都可以通过QQ联系我,或者访问我的B站主页,记得关注。</p>
                 <div class="contact__buttons">
                     <a href="mailto:1815830543@qq.com" class="button"><i class="fas fa-envelope"></i> 发送邮件</a>
-                    <button class="button" id="wechat-btn"><i class="fab fa-weixin"></i> 添加微信</button>
+                    <a href="https://space.bilibili.com/1815535695" target="_blank" class="button"><i class="fab fa-bilibili"></i> 访问B站</a>
                     <button class="button" id="qq-btn"><i class="fab fa-qq"></i> 添加QQ</button>
                 </div>
             </div>
@@ -203,15 +205,6 @@
             <p>&copy; 2026 XJC的智慧小屋.</p>
         </div>
     </footer>
-
-    <div class="modal" id="wechat-modal">
-        <div class="modal__content">
-            <span class="modal__close">&times;</span>
-            <h3>微信二维码</h3>
-            <img src="assets/images/wechat_qr.png" alt="WeChat QR Code" style="width: 200px; height: 200px; background: #eee; object-fit: contain;">
-            <p>扫一扫添加我的微信</p>
-        </div>
-    </div>
 
     <div class="modal" id="qq-modal">
         <div class="modal__content">
