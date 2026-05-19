@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="zh-CN" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XJC的智慧小屋</title>
     <meta name="description" content="你好，我是XJC。一名Whuer在读本科生，热衷于探索硬件与代码世界的电子爱好者。">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
+
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <div class="fixed-bg"></div>
+    <canvas id="particle-canvas"></canvas>
 
     <header class="header">
         <nav class="nav container">
@@ -30,7 +30,7 @@
                 </ul>
             </div>
             <div class="nav__actions">
-                <i class="fas fa-moon theme-switcher" id="theme-button"></i>
+                <i class="fas fa-sun theme-switcher" id="theme-button"></i>
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -46,8 +46,8 @@
                     <p class="hero__subtitle">欢迎来到我的智慧小屋</p>
                     <p class="hero__description">我会分享自己日常制作的一些小项目。</p>
                     <div class="hero__buttons">
-                        <a href="#projects" class="button">查看我的项目</a>
-                        <a href="https://github.com/xjc666-666" target="_blank" class="button button--ghost">访问 GitHub</a>
+                        <a href="#projects" class="button"><span>查看我的项目</span></a>
+                        <a href="https://github.com/xjc666-666" target="_blank" class="button button--ghost"><span>访问 GitHub</span></a>
                     </div>
                 </div>
                 <div class="hero__image">
@@ -62,11 +62,11 @@
                 <div class="about__left">
                     <p>我是一个电信虫且。</p>
                     <p>我的技术跨度较广：从软件——使用 <strong>Keil</strong> 为单片机编写<strong> C </strong>语言，到硬件——运用 <strong>嘉立创</strong> 绘制简单的原理图和PCB，再到后端——使用 <strong>Java</strong> 编写简单的安卓应用程序。</p>
-                    
+
                     <div class="musings">
                         <h3 class="musings__title">念念经</h3>
                         <blockquote>
-                            “步履不止，前进不止。”
+                            "步履不止，前进不止。"
                         </blockquote>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                 </div>
 
                 <div class="projects__grid grid">
-                    
+
                     <div class="project-card" data-category="hardware">
                         <div class="project-card__content">
                             <h3 class="project-card__title">桌面蓝牙音响自制全记录</h3>
@@ -141,7 +141,7 @@
                             <h3 class="project-card__title">智能桌面灯带控制系统</h3>
                             <p class="project-card__description">可以用自己开发的手机app控制灯带效果、灯带亮度和持续时间，这算一个小预告吧。</p>
                             <div class="project-card__actions">
-                                <span class="project-card__action" style="color: var(--text-color);"><i class="fas fa-hourglass-half"></i> 敬请期待</span>
+                                <span class="project-card__action"><i class="fas fa-hourglass-half"></i> 敬请期待</span>
                             </div>
                         </div>
                     </div>
@@ -153,7 +153,7 @@
         <section id="insights" class="insights section">
             <h2 class="section__title">小巧思</h2>
             <div class="insights__container container grid">
-                
+
                 <article class="insight-card">
                     <div class="insight-card__header">
                         <span class="insight-card__date"><i class="far fa-calendar-alt"></i> 2026-03-29</span>
@@ -181,7 +181,7 @@
                     </div>
                     <h3 class="insight-card__title">头脑风暴中...</h3>
                     <p class="insight-card__excerpt">别催别催。</p>
-                    <a href="#insights" class="insight-card__link" style="color: var(--text-color); cursor: default;">敬请期待 <i class="fas fa-hourglass-half"></i></a>
+                    <a href="#insights" class="insight-card__link" style="color: var(--text-color-light); cursor: default;">敬请期待 <i class="fas fa-hourglass-half"></i></a>
                 </article>
 
             </div>
@@ -190,11 +190,11 @@
         <section id="contact" class="contact section">
             <h2 class="section__title">联系我</h2>
             <div class="contact__container container">
-                <p>由于这是个静态网页,没法留言,如果你有啥问题或建议,都可以通过QQ联系我,或者访问我的B站主页,记得关注。</p>
+                <p>由于这是个静态网页，没法留言，如果你有啥问题或建议，都可以通过QQ联系我，或者访问我的B站主页，记得关注。</p>
                 <div class="contact__buttons">
-                    <a href="mailto:1815830543@qq.com" class="button"><i class="fas fa-envelope"></i> 发送邮件</a>
-                    <a href="https://space.bilibili.com/1815535695" target="_blank" class="button"><i class="fab fa-bilibili"></i> 访问B站</a>
-                    <button class="button" id="qq-btn"><i class="fab fa-qq"></i> 添加QQ</button>
+                    <a href="mailto:1815830543@qq.com" class="button"><i class="fas fa-envelope"></i> <span>发送邮件</span></a>
+                    <a href="https://space.bilibili.com/1815535695" target="_blank" class="button"><i class="fab fa-bilibili"></i> <span>访问B站</span></a>
+                    <button class="button" id="qq-btn"><i class="fab fa-qq"></i> <span>添加QQ</span></button>
                 </div>
             </div>
         </section>
@@ -210,7 +210,7 @@
         <div class="modal__content">
             <span class="modal__close">&times;</span>
             <h3>QQ二维码</h3>
-            <img src="assets/images/qq_qr.png" alt="QQ QR Code" style="width: 200px; height: 200px; background: #eee; object-fit: contain;">
+            <img src="assets/images/qq_qr.png" alt="QQ QR Code" style="width: 200px; height: 200px; background: #eee; object-fit: contain; border-radius: 0.5rem;">
             <p>扫一扫添加我的QQ</p>
         </div>
     </div>
