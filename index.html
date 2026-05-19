@@ -8,15 +8,21 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <canvas id="particle-canvas"></canvas>
+    <!-- Background orbs -->
+    <div class="bg-orbs">
+        <div class="bg-orb bg-orb--1"></div>
+        <div class="bg-orb bg-orb--2"></div>
+        <div class="bg-orb bg-orb--3"></div>
+    </div>
 
+    <!-- Navigation -->
     <header class="header">
         <nav class="nav container">
             <a href="#" class="nav__logo">XJC的智慧小屋</a>
@@ -30,119 +36,135 @@
                 </ul>
             </div>
             <div class="nav__actions">
-                <i class="fas fa-sun theme-switcher" id="theme-button"></i>
-                <div class="nav__toggle" id="nav-toggle">
+                <button class="nav__theme" id="theme-btn" aria-label="主题切换">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="nav__toggle" id="nav-toggle" aria-label="菜单">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
 
     <main>
+        <!-- ============ Hero ============ -->
         <section id="hero" class="hero section">
-            <div class="hero__container container grid">
-                <div class="hero__content">
-                    <h1>你好, 我是 XJC</h1>
-                    <p class="hero__subtitle">欢迎来到我的智慧小屋</p>
-                    <p class="hero__description">我会分享自己日常制作的一些小项目。</p>
-                    <div class="hero__buttons">
-                        <a href="#projects" class="button"><span>查看我的项目</span></a>
-                        <a href="https://github.com/xjc666-666" target="_blank" class="button button--ghost"><span>访问 GitHub</span></a>
-                    </div>
+            <!-- Text matrix background (static, always visible) -->
+            <div class="hero__matrix-wrap">
+                <div class="hero__matrix hero__matrix--base" id="hero-matrix-base"></div>
+            </div>
+
+            <!-- Chinese text layer (always visible) -->
+            <div class="hero__content hero__content--cn">
+                <img src="assets/images/avatar.jpg" alt="XJC" class="hero__avatar">
+                <h1>你好, 我是 XJC</h1>
+                <p class="hero__subtitle">欢迎来到我的智慧小屋</p>
+                <p class="hero__desc">分享日常制作的小项目，探索硬件与代码的无限可能。</p>
+                <div class="hero__buttons">
+                    <a href="#projects" class="btn btn--primary">查看我的项目</a>
+                    <a href="https://github.com/xjc666-666" target="_blank" class="btn btn--outline">访问 GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <div class="hero__image">
-                    <img src="assets/images/avatar.jpg" alt="XJC Logo">
+            </div>
+
+            <!-- Spotlight wrapper: ONE circle for everything -->
+            <div class="spotlight" id="spotlight">
+                <!-- Bright matrix letters inside circle -->
+                <div class="spotlight__matrix" id="spotlight-matrix"></div>
+                <!-- English text inside circle -->
+                <div class="spotlight__text">
+                    <img src="assets/images/avatar.jpg" alt="XJC" class="hero__avatar">
+                    <h1>HELLO, I'M XJC</h1>
+                    <p class="hero__subtitle">WELCOME TO MY WISDOM HOUSE</p>
+                    <p class="hero__desc">Sharing my projects, exploring the infinite possibilities of hardware &amp; code.</p>
+                    <div class="hero__buttons">
+                        <span class="btn btn--primary">VIEW MY PROJECTS</span>
+                        <span class="btn btn--outline">GITHUB <i class="fas fa-arrow-up-right-from-square"></i></span>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- ============ About ============ -->
         <section id="about" class="about section">
             <h2 class="section__title">关于我</h2>
             <div class="about__container container grid">
                 <div class="about__left">
                     <p>我是一个电信虫且。</p>
-                    <p>我的技术跨度较广：从软件——使用 <strong>Keil</strong> 为单片机编写<strong> C </strong>语言，到硬件——运用 <strong>嘉立创</strong> 绘制简单的原理图和PCB，再到后端——使用 <strong>Java</strong> 编写简单的安卓应用程序。</p>
+                    <p>技术跨度较广：从软件——使用 <strong>Keil</strong> 为单片机编写<strong> C </strong>语言，到硬件——运用 <strong>嘉立创</strong> 绘制原理图和PCB，再到后端——使用 <strong>Java</strong> 编写安卓应用程序。</p>
 
-                    <div class="musings">
-                        <h3 class="musings__title">念念经</h3>
-                        <blockquote>
-                            "步履不止，前进不止。"
-                        </blockquote>
+                    <div class="motto">
+                        <p class="motto__title">念念经</p>
+                        <blockquote>"步履不止，前进不止。"</blockquote>
                     </div>
                 </div>
 
                 <div class="about__right">
                     <div class="timeline">
                         <div class="timeline__item">
-                            <div class="timeline__date">2023-08-25</div>
+                            <div class="timeline__date">2023 · 08</div>
                             <div class="timeline__content">
                                 <h3>步入大学</h3>
                                 <p>开始学习电子信息工程，了解和学习各种专业知识。</p>
                             </div>
                         </div>
                         <div class="timeline__item">
-                            <div class="timeline__date">2025-11-22</div>
+                            <div class="timeline__date">2025 · 11</div>
                             <div class="timeline__content">
                                 <h3>竞赛生涯结束</h3>
-                                <p>在这期间，历经电赛、嵌赛、集创赛等比赛，获得了多个奖项，积累了不少软硬件知识。</p>
+                                <p>历经电赛、嵌赛、集创赛等比赛，获得多个奖项，积累了不少软硬件知识。</p>
                             </div>
                         </div>
                         <div class="timeline__item">
                             <div class="timeline__date">至今</div>
                             <div class="timeline__content">
                                 <h3>科研项目</h3>
-                                <p>目前尝试进组做科研，自己平常也做一些小项目。</p>
+                                <p>尝试进组做科研，平常也做一些小项目。</p>
                             </div>
                         </div>
                     </div>
-                    <ul class="about__tags">
+                    <ul class="tags">
                         <li>嵌入式系统</li>
-                        <li>C/C++底层</li>
+                        <li>C/C++ 底层</li>
                         <li>安卓应用设计</li>
-                        <li>硬件DIY</li>
+                        <li>硬件 DIY</li>
                     </ul>
                 </div>
             </div>
         </section>
 
+        <!-- ============ Projects ============ -->
         <section id="projects" class="projects section">
             <h2 class="section__title">项目 & 实战</h2>
             <div class="projects__container container">
                 <div class="projects__filters">
-                    <button class="filter-button active" data-filter="all">全部</button>
-                    <button class="filter-button" data-filter="hardware">硬件开发</button>
-                    <button class="filter-button" data-filter="software">软件工程</button>
+                    <button class="filter-btn active" data-filter="all">全部</button>
+                    <button class="filter-btn" data-filter="hardware">硬件开发</button>
+                    <button class="filter-btn" data-filter="software">软件工程</button>
                 </div>
 
                 <div class="projects__grid grid">
 
-                    <div class="project-card" data-category="hardware">
-                        <div class="project-card__content">
-                            <h3 class="project-card__title">桌面蓝牙音响自制全记录</h3>
-                            <p class="project-card__description">从原理图绘制、PCB打样到外壳组装的全过程记录，打造属于自己的桌面发声单元。</p>
-                            <div class="project-card__actions">
-                                <a href="articles/bluetooth-speaker.html" class="project-card__action project-card__action--primary">查看详情文章</a>
-                            </div>
+                    <div class="card" data-category="hardware">
+                        <h3 class="card__title">桌面蓝牙音响自制全记录</h3>
+                        <p class="card__desc">从原理图绘制、PCB打样到外壳组装的全过程记录，打造属于自己的桌面发声单元。</p>
+                        <div class="card__actions">
+                            <a href="articles/bluetooth-speaker.html" class="card__link">查看详情 <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card" data-category="software">
-                        <div class="project-card__content">
-                            <h3 class="project-card__title">音频处理芯片 TM2314 驱动开发</h3>
-                            <p class="project-card__description">基于STM32F103C8T6的TM2314 驱动代码实现，包含音量调节、输入选择等功能的 .c 和 .h 文件。</p>
-                            <div class="project-card__actions">
-                                <a href="articles/tm2314-driver.html" class="project-card__action project-card__action--primary">查看驱动代码</a>
-                            </div>
+                    <div class="card" data-category="software">
+                        <h3 class="card__title">音频处理芯片 TM2314 驱动开发</h3>
+                        <p class="card__desc">基于STM32F103C8T6的TM2314驱动代码实现，包含音量调节、输入选择等功能的 .c/.h 文件。</p>
+                        <div class="card__actions">
+                            <a href="articles/tm2314-driver.html" class="card__link">查看代码 <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="project-card" data-category="hardware software">
-                        <div class="project-card__content">
-                            <h3 class="project-card__title">智能桌面灯带控制系统</h3>
-                            <p class="project-card__description">可以用自己开发的手机app控制灯带效果、灯带亮度和持续时间，这算一个小预告吧。</p>
-                            <div class="project-card__actions">
-                                <span class="project-card__action"><i class="fas fa-hourglass-half"></i> 敬请期待</span>
-                            </div>
+                    <div class="card" data-category="hardware software">
+                        <h3 class="card__title">智能桌面灯带控制系统</h3>
+                        <p class="card__desc">用自己开发的手机app控制灯带效果、亮度和持续时间，敬请期待。</p>
+                        <div class="card__actions">
+                            <span class="card__muted"><i class="fas fa-hourglass-half"></i> 开发中</span>
                         </div>
                     </div>
 
@@ -150,14 +172,15 @@
             </div>
         </section>
 
+        <!-- ============ Insights ============ -->
         <section id="insights" class="insights section">
             <h2 class="section__title">小巧思</h2>
             <div class="insights__container container grid">
 
                 <article class="insight-card">
-                    <div class="insight-card__header">
+                    <div class="insight-card__meta">
                         <span class="insight-card__date"><i class="far fa-calendar-alt"></i> 2026-03-29</span>
-                        <span class="insight-card__tag">桌面整理计划</span>
+                        <span class="insight-card__tag">桌面整理</span>
                     </div>
                     <h3 class="insight-card__title">桌面收拾和布局分享</h3>
                     <p class="insight-card__excerpt">分享一下我整理桌面后的心情，尝试打造高效舒适的桌面环境...</p>
@@ -165,9 +188,9 @@
                 </article>
 
                 <article class="insight-card">
-                    <div class="insight-card__header">
+                    <div class="insight-card__meta">
                         <span class="insight-card__date"><i class="far fa-calendar-alt"></i> 2026-03-31</span>
-                        <span class="insight-card__tag">人生浪费指南</span>
+                        <span class="insight-card__tag">牢骚</span>
                     </div>
                     <h3 class="insight-card__title">大学到底该怎么过啊</h3>
                     <p class="insight-card__excerpt">发个牢骚...</p>
@@ -175,26 +198,27 @@
                 </article>
 
                 <article class="insight-card">
-                    <div class="insight-card__header">
+                    <div class="insight-card__meta">
                         <span class="insight-card__date"><i class="far fa-clock"></i> 待定</span>
                         <span class="insight-card__tag">更新中</span>
                     </div>
                     <h3 class="insight-card__title">头脑风暴中...</h3>
-                    <p class="insight-card__excerpt">别催别催。</p>
-                    <a href="#insights" class="insight-card__link" style="color: var(--text-color-light); cursor: default;">敬请期待 <i class="fas fa-hourglass-half"></i></a>
+                    <p class="insight-card__excerpt">新的想法正在酝酿，敬请期待。</p>
+                    <span class="insight-card__link" style="color: var(--text-muted); cursor: default;">敬请期待 <i class="fas fa-hourglass-half"></i></span>
                 </article>
 
             </div>
         </section>
 
+        <!-- ============ Contact ============ -->
         <section id="contact" class="contact section">
             <h2 class="section__title">联系我</h2>
             <div class="contact__container container">
-                <p>由于这是个静态网页，没法留言，如果你有啥问题或建议，都可以通过QQ联系我，或者访问我的B站主页，记得关注。</p>
+                <p>静态网页没法留言，有问题或建议可以通过QQ联系我，或者访问B站主页。</p>
                 <div class="contact__buttons">
-                    <a href="mailto:1815830543@qq.com" class="button"><i class="fas fa-envelope"></i> <span>发送邮件</span></a>
-                    <a href="https://space.bilibili.com/1815535695" target="_blank" class="button"><i class="fab fa-bilibili"></i> <span>访问B站</span></a>
-                    <button class="button" id="qq-btn"><i class="fab fa-qq"></i> <span>添加QQ</span></button>
+                    <a href="mailto:1815830543@qq.com" class="btn btn--primary"><i class="fas fa-envelope"></i> 发送邮件</a>
+                    <a href="https://space.bilibili.com/1815535695" target="_blank" class="btn btn--outline"><i class="fab fa-bilibili"></i> B站主页</a>
+                    <button class="btn btn--outline" id="qq-btn"><i class="fab fa-qq"></i> 添加QQ</button>
                 </div>
             </div>
         </section>
@@ -202,15 +226,16 @@
 
     <footer class="footer">
         <div class="footer__container container">
-            <p>&copy; 2026 XJC的智慧小屋.</p>
+            <p>&copy; 2026 XJC的智慧小屋</p>
         </div>
     </footer>
 
+    <!-- QQ Modal -->
     <div class="modal" id="qq-modal">
-        <div class="modal__content">
+        <div class="modal__box">
             <span class="modal__close">&times;</span>
-            <h3>QQ二维码</h3>
-            <img src="assets/images/qq_qr.png" alt="QQ QR Code" style="width: 200px; height: 200px; background: #eee; object-fit: contain; border-radius: 0.5rem;">
+            <h3>QQ 二维码</h3>
+            <img src="assets/images/qq_qr.png" alt="QQ QR" style="width:180px;height:180px;background:#eee;object-fit:contain;border-radius:0.5rem;">
             <p>扫一扫添加我的QQ</p>
         </div>
     </div>
